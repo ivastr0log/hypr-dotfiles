@@ -1,0 +1,68 @@
+* {
+  background-image: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+window {
+  background-color: rgba(12, 12, 12, 0.8);
+  font-family: JetBrains Mono NF;
+  font-size: 26px;
+}
+
+button {
+  background-color: transparent;
+  border-radius: 80px;
+  border-color: #181825;
+  text-decoration-color: #FFFFFF;
+  color: #FFFFFF;
+  /*background-color: #1E1E1E;*/
+  border-style: solid;
+  border-width: 3px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 35%;
+}
+
+button:hover {
+  /*background-color: #3700B3;*/
+  outline-style: none;
+  border-color: #7899FA;
+  background-size: 60%;
+  background-color: #7899FA;
+}
+
+button:focus {
+  outline: none;
+}
+
+#lock {
+  background-image: image(url("/home/honey/.config/wlogout/icons/wleave/mocha/yellow/lock.svg"));
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#logout {
+  background-image: image(url("/home/honey/.config/wlogout/icons/wleave/mocha/blue/logout.svg"));
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#suspend {
+  background-image: image(url("/home/honey/.config/wlogout/icons/wleave/mocha/peach/suspend.svg"));
+  margin-bottom: 10px;
+}
+
+#hibernate {
+  background-image: image(url("/home/honey/.config/wlogout/icons/wleave/mocha/red/hibernate.svg"));
+  margin-right: 10px;
+}
+
+#shutdown {
+  background-image: image(url("/home/honey/.config/wlogout/icons/wleave/mocha/mauve/shutdown.svg"));
+  margin-right: 10px;
+}
+
+#reboot {
+  background-image: image(url("/home/honey/.config/wlogout/icons/wleave/mocha/green/reboot.svg"));
+}

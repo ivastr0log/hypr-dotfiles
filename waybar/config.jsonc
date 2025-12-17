@@ -1,0 +1,150 @@
+// -*- mode: jsonc -*-
+{
+  // "layer": "top", // Waybar at top layer
+  //"position": "bottom", // Waybar position (top|bottom|left|right)
+  "height": 50, // Waybar height (to be removed for auto height)
+  // "width": 1280, // Waybar width
+  "width": 2500,
+  "margin-top": 7,
+  "margin-bottom": -10,
+  "spacing": 2,
+  // Choose the order of the modules
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces",
+    "custom/song",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "cpu",
+    "memory",
+    "temperature",
+    "power-profiles-daemon"
+  ],
+  "modules-right": [
+    "hyprland/language",
+    "clock",
+    "network",
+    "pulseaudio",
+    "battery",
+    "custom/power"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    /*"format-icons": {
+        "active": "",
+        "default": ""
+      },*/
+    "persistent-workspaces": {
+      "HDMI-A-1": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  "hyprland/window": {
+    "format": "{class}",
+    "rewrite": {
+      "": "None"
+    },
+    "max-length": 10,
+    "separate-outputs": true
+  },
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": "{name} {icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": ""
+    }
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "  {:%H:%M}"
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": false
+  },
+  "memory": {
+    "format": " {}%"
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": " {temperatureC}°C"
+  },
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-full": "{icon} {capacity}%",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ]
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "Performance",
+      "balanced": "Balanced",
+      "power-saver": "Quiet"
+    }
+  },
+  "network": {
+    "format-wifi": "  {ipaddr}/{cidr}",
+    "format-ethernet": "{iaddr}/{cidr} ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "on-click": "sh $HOME/.config/waybar/scripts/wifi.sh"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": " ",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        " ",
+        " "
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "custom/power": {
+    "format": "⏻ ",
+    "tooltip": false,
+    "on-click": "wlogout --show-binds"
+  },
+  "custom/song": {
+    "format": "  | {}",
+    "exec": "$HOME/.config/waybar/scripts/music.sh",
+    "interval": 1
+  },
+  "custom/launcher": {
+    "format": " ",
+    "on-click": "rofi -show drun"
+  }
+}
