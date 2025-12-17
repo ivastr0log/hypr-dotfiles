@@ -26,6 +26,8 @@ This is info about my Hyprland setup for writing code and studying
 ![gallery](demo/demo5.png)
 ![gallery](demo/demo6.png)
 
+
+
 ## 🚀 Features
 * Convenient custom configuration of Firefox.
 * Hotkeys for maximum productivity.
